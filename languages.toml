@@ -1,0 +1,13 @@
+[[language]]
+name = "rust"
+
+[language.language-server]
+command = "rustup"
+args = ["run", "stable", "rust-analyzer"]
+
+[language.config.check]
+command = "clippy"
+
+[[language]]
+name = "c-sharp"
+language-server = { command = "dotnet", args = [ "/Users/smylee/./Library/Application Support/JetBrains/Toolbox/apps/Rider/ch-0/223.8617.53/Rider.app.plugins/sonarlint-intellij/omnisharp/net6/OmniSharp.dll", "--languageserver" ] }

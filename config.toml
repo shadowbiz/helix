@@ -1,0 +1,134 @@
+theme = 'gruvbox'
+
+# Editor stuff
+[editor]
+line-number = "relative"
+mouse = false
+auto-save = true
+true-color = true
+bufferline = "multiple"
+color-modes = true
+cursorline = true
+
+[editor.statusline]
+left = ["mode", "spinner", "file-name"]
+center = []
+right = [
+  "version-control",
+  "diagnostics",
+  "selections",
+  "position",
+  "file-encoding",
+  "file-line-ending",
+  "file-type",
+]
+separator = "│"
+mode.normal = "NORMAL"
+mode.insert = "INSTERT"
+mode.select = "SELECT"
+
+[editor.file-picker]
+hidden = false
+
+[editor.cursor-shape]
+insert = "bar"
+normal = "block"
+select = "underline"
+
+[editor.lsp]
+display-inlay-hints = true
+
+[editor.indent-guides]
+render = true
+character = "╎" # Some characters that work well: "▏", "┆", "┊", "⸽"
+skip-levels = 1
+
+[editor.soft-wrap]
+enable = true
+max-wrap = 25 # increase value to reduce forced mid-word wrapping
+max-indent-retain = 0
+# wrap-indicator = ""  # set wrap-indicator to "" to hide it
+
+#Keybindings
+[keys.normal]
+esc = ["collapse_selection", "keep_primary_selection"]
+"ret" = ["open_below", "normal_mode"]
+"=" = [ ":format"]
+
+# Use the system clipboard like a normal app
+d = ["yank_joined_to_clipboard", "delete_selection_noyank"]
+D = "delete_selection_noyank"
+y = "yank_joined_to_clipboard"
+Y = "yank_main_selection_to_clipboard"
+p = "paste_clipboard_after"
+P = "paste_clipboard_before"
+R = "replace_selections_with_clipboard"
+# "tab" = "code_action"
+
+# Search for word under cursor
+"*" = [
+  "move_char_right",
+  "move_prev_word_start",
+  "move_next_word_end",
+  "search_selection",
+  "search_next",
+]
+
+# Control-Arrows to switch panes
+C-up = "jump_view_up"
+C-down = "jump_view_down"
+C-left = "jump_view_left"
+C-right = "jump_view_right"
+
+# Shift Arrows move 5 times in direction
+up = [
+  "move_line_up",
+  "move_line_up",
+  "move_line_up",
+  "move_line_up",
+  "move_line_up",
+]
+down = [
+  "move_line_down",
+  "move_line_down",
+  "move_line_down",
+  "move_line_down",
+  "move_line_down",
+]
+S-left = [
+  "move_char_left",
+  "move_char_left",
+  "move_char_left",
+  "move_char_left",
+  "move_char_left",
+]
+S-right = [
+  "move_char_right",
+  "move_char_right",
+  "move_char_right",
+  "move_char_right",
+  "move_char_right",
+]
+
+[keys.normal.space]
+l = ":reload-all"
+c = ":buffer-close"
+# a = ":buffer-close-others"
+"`" = "wclose"
+"tab" = "vsplit"
+"ret" = ":wa"
+
+[keys.insert]
+esc = ["collapse_selection", "normal_mode"]
+
+[keys.select]
+esc = ["collapse_selection", "keep_primary_selection", "normal_mode"]
+
+# Use the system clipboard like a normal app
+d = ["yank_joined_to_clipboard", "delete_selection_noyank"]
+D = "delete_selection_noyank"
+y = "yank_joined_to_clipboard"
+Y = "yank_main_selection_to_clipboard"
+p = "paste_clipboard_after"
+P = "paste_clipboard_before"
+R = "replace_selections_with_clipboard"
